@@ -52,7 +52,9 @@ Test if it was installed correctly by typing nmon in terminal.
 Visit http://nmon.sourceforge.net/pmwiki.php?n=Site.Documentation for options.
 
 Resulting nmon files can be viewed using several tools, we recommend NMONVisualizer https://nmonvisualizer.github.io/nmonvisualizer/
- 
+
+### installing NodeJS modules
+All NodeJS libraries can be installed using the command `npm install package-name-here` e.g. `npm install mqtt`
  
 ## VNC
 ### Raspberry Pi
