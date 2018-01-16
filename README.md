@@ -46,8 +46,11 @@ The follwoing commands will work on Mac machines only. To SSH from Windows, use 
 NMON is a system performance tool for Linux-based systems.
 It can be installed using apt-get:
 `sudo apt-get install nmon`
+
 Test if it was installed correctly by typing nmon in terminal.
+
 Visit http://nmon.sourceforge.net/pmwiki.php?n=Site.Documentation for options.
+
 Resulting nmon files can be viewed using several tools, we recommend NMONVisualizer https://nmonvisualizer.github.io/nmonvisualizer/
  
  
@@ -71,5 +74,4 @@ Install VNC viewer from https://www.realvnc.com/en/connect/download/viewer/
 
 ## Usage
 Open VNCViewer on your computer, and type the IP address of the Raspberry Pi followed by port **5900** e.g. **x.x.x.x:5900**, then enter the Raspberry Pi’s username and password
-![Screenshot](/images/vnc.png?raw=true "Connect to your RPi")
 ![Screenshot](/images/vnc2.png?raw=true "Login")
