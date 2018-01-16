@@ -31,6 +31,7 @@ P.s. steps (1-4) will only work if you burned Raspbian onto the SD card, and may
 
 ### Connecting through SSH
 The follwoing commands will work on Mac machines only. To SSH from Windows, use PuTTY (http://www.putty.org/)
+
 6.	Type in `ssh pi@x.x.x.x where x.x.x.x` is the IP address of your Pi
 7.	Enter raspberry when asked for the password
 8.	You now have access to the Pi through its terminal
