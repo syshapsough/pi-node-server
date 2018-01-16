@@ -42,7 +42,8 @@ The follwoing commands will work on Mac machines only. To SSH from Windows, use 
 4.	To verify your installation, run node -v
 
 ## Installing NMON
-NMON is a system performance tool for Linux-based systems. It can be installed using apt-get:
+NMON is a system performance tool for Linux-based systems.
+It can be installed using apt-get:
 `sudo apt-get install nmon`
 Test if it was installed correctly by typing nmon in terminal.
 Visit http://nmon.sourceforge.net/pmwiki.php?n=Site.Documentation for options.
