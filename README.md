@@ -59,3 +59,5 @@ Restart
 `sudo reboot`
 ## Mac
 Install VNC viewer from https://www.realvnc.com/en/connect/download/viewer/
+## Usage
+Open VNCViewer on your computer, and type the IP address of the Raspberry Pi followed by port **5900** e.g. **x.x.x.x:5900**, then enter the Raspberry Pi’s username and password
