@@ -27,12 +27,12 @@ P.s. steps (1-4) will only work if you burned Raspbian onto the SD card, and may
 `ip=192.168.1.200::192.168.1.1:255.255.255.0:rpi:eth0:off`
 3.	Plug the SD card back into the RPi, then connect the RPi to your computer using an ethernet cable
 4.	From the network settings on your computer, set you ethernet IP to `192.168.1.201` (or any IP that falls within the same network). Set the network mask to `255.255.255.0` and the gateway to `192.168.1.1`
-5.	From your computer’s terminal, try `ping 192.168.1.200`
+5.	From your computer’s terminal, try ```ping 192.168.1.200```
 
 ### Connecting through SSH
 The follwoing commands will work on Mac machines only. To SSH from Windows, use PuTTY (http://www.putty.org/)
 
-6.	Type in `ssh pi@x.x.x.x where x.x.x.x` is the IP address of your Pi
+6.	Type in ```ssh pi@x.x.x.x where x.x.x.x``` is the IP address of your Pi
 7.	Enter raspberry when asked for the password
 8.	You now have access to the Pi through its terminal
 
@@ -45,7 +45,9 @@ The follwoing commands will work on Mac machines only. To SSH from Windows, use 
 ### Installing NMON
 NMON is a system performance tool for Linux-based systems.
 It can be installed using apt-get:
-`sudo apt-get install nmon`
+```
+sudo apt-get install nmon
+```
 
 Test if it was installed correctly by typing nmon in terminal.
 
@@ -54,7 +56,10 @@ Visit http://nmon.sourceforge.net/pmwiki.php?n=Site.Documentation for options.
 Resulting nmon files can be viewed using several tools, we recommend NMONVisualizer https://nmonvisualizer.github.io/nmonvisualizer/
 
 ### installing NodeJS modules
-All NodeJS libraries can be installed using the command `npm install package-name-here` e.g. `npm install mqtt`
+All NodeJS libraries can be installed using the command
+```
+npm install package-name-here
+```
  
 ## VNC
 ### Raspberry Pi
@@ -67,9 +72,11 @@ sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer
 ### Enable VNC
 From terminal, run the following command
 `sudo raspi-config`
+
 Navigate to **Interfacing Options**, then scroll down and select **VNC > Yes**.
+
 Restart
-`sudo reboot`
+```sudo reboot```
 
 ### PC/Mac
 Install VNC viewer from https://www.realvnc.com/en/connect/download/viewer/
