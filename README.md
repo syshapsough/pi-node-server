@@ -1,6 +1,6 @@
 # Setup
 The following sections explain the required steps to prepare the PC/Mac and the Raspberry Pi
-# Mac
+# PC/MAC
 ## CouchDB
 Install the latest version of CouchDB version 1 or 2 from http://couchdb.apache.org/#download
 ### NodeJS
@@ -57,7 +57,7 @@ From terminal, run the following command
 Navigate to **Interfacing Options**, then scroll down and select **VNC > Yes**.
 Restart
 `sudo reboot`
-## Mac
+## PC/Mac
 Install VNC viewer from https://www.realvnc.com/en/connect/download/viewer/
 ## Usage
 Open VNCViewer on your computer, and type the IP address of the Raspberry Pi followed by port **5900** e.g. **x.x.x.x:5900**, then enter the Raspberry Pi’s username and password
