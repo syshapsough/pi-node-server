@@ -54,6 +54,18 @@ where x.x.x.x is the IP address of your Pi
 node -v
 ```
 
+### installing NodeJS modules
+All NodeJS libraries can be installed using the command
+```
+npm install package-name-here
+```
+
+### install CouchDB
+The default installation of CouchDB that installs on the Raspberry Pi is CouchDB 1.6. To install, use `apt-get`
+```
+sudo apt-get install couchdb
+```
+
 ### Installing NMON
 NMON is a system performance tool for Linux-based systems.
 It can be installed using apt-get:
@@ -66,12 +78,6 @@ Test if it was installed correctly by typing nmon in terminal.
 Visit http://nmon.sourceforge.net/pmwiki.php?n=Site.Documentation for options.
 
 Resulting nmon files can be viewed using several tools, we recommend NMONVisualizer https://nmonvisualizer.github.io/nmonvisualizer/
-
-### installing NodeJS modules
-All NodeJS libraries can be installed using the command
-```
-npm install package-name-here
-```
  
 ## VNC
 ### Raspberry Pi
