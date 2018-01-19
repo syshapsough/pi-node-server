@@ -106,3 +106,35 @@ Install VNC viewer from https://www.realvnc.com/en/connect/download/viewer/
 ### Usage
 Open VNCViewer on your computer, and type the IP address of the Raspberry Pi followed by port `5900` e.g. `x.x.x.x:5900`, then enter the Raspberry Pi’s username and password
 ![Screenshot](/images/vnc2.png?raw=true "Login")
+
+
+## Bad Network Simulation
+Mac OSX includes tools that can contro network traffic by filtering packets, controlling bandwidth, adding delay, etc.
+Create a custom anchor in pf
+```
+(cat /etc/pf.conf && echo "dummynet-anchor \"mop\"" && echo "anchor \"mop\"") | sudo pfctl -f -
+```
+This will reload your standard pf configuration plus a custom anchor named “mop”. We will place our custom rules there.
+
+Pipe the desired traffic to dummynet
+```
+echo "dummynet in quick proto tcp from any to any port 1883 pipe 1" | sudo pfctl -a mop -f -
+```
+This is MY rule (i needed to throttle all bandwidth on port 1883). Modify to your needs and consult pf documentation (yes - that is standard pf stuff apart from the dummynet :) )
+
+Throttle the pipe
+```
+sudo dnctl pipe 1 config bw 1Mbit/s
+```
+Should be self explanatory :)
+
+To reset:
+```
+sudo dnctl flush
+sudo pfctl -f /etc/pf.conf
+```
+
+```
+sudo pfctl -E
+sudo pfctl -D
+```
