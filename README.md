@@ -3,8 +3,9 @@ The following sections explain the required steps to prepare the PC/Mac and the 
 
 ## Table of Contents  
 #### 1. [Setting up your personal computer](#pcmac)    
-#### 1. [Setting up your Raspberry Pi](#rpi) 
-#### 1. [VNC](#vnc) 
+#### 2. [Setting up your Raspberry Pi](#rpi) 
+#### 3. [Remote access to Raspberry Pi through VNC](#vnc) 
+#### 4. [Simulating bad network conditions](#pf) 
 
 <a name="pcmac"/>
 
@@ -119,8 +120,9 @@ Install VNC viewer from https://www.realvnc.com/en/connect/download/viewer/
 Open VNCViewer on your computer, and type the IP address of the Raspberry Pi followed by port `5900` e.g. `x.x.x.x:5900`, then enter the Raspberry Pi’s username and password
 ![Screenshot](/images/vnc2.png?raw=true "Login")
 
+<a name="pf"/>
 
-## Bad Network Simulation
+## Simulating networks with Mac OSX's PF tool
 Mac OSX includes tools that can contro network traffic by filtering packets, controlling bandwidth, adding delay, etc.
 first, enable pf
 ```
