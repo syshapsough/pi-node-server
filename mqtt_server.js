@@ -1,10 +1,9 @@
-var mqttBroker = 'mqtt://localhost:1883';
+var mqttBroker = 'mqtt://iot.eclipse.org:1883';
 var couchDbHost = 'http://localhost:5984';
 var questionsDB = 'questions';
 var answersDB = 'answers';
 var topic = 'questions';
 
-var SerialPort = require('serialport');
 var mqtt = require('mqtt');
 
 var nano = require('nano')(couchDbHost);
@@ -15,16 +14,6 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
-
-
-/******************************************************** Serial Port **************************************************************************/
-//initialize serial communication with sensing element (photon, arduino, lilypad,...)
-var port = new SerialPort('/dev/ttyACM0', function (err) {
-    if (err) {
-        return console.log('Error: ', err.message);
-    }
-});
-/***********************************************************************************************************************************************/
 
 
 /************************************************************ HTTP Server **********************************************************************/
@@ -45,27 +34,10 @@ function getQuestion(req,res){
 app.get('/question_byqID/:qID', getQuestion, function (req, res) {
 });
 
-function getSensors(req,res,next){
-	//the sensing element is expexting an 's'. it will respond with sensor readings
-	port.write('s', function(err) {
-		if (err) {
-		  return console.log('Error on write: ', err.message);
-		}
-		console.log('message written');
-	});
-	//once the sensing element has sent the sensor readings, deliver them to the client
-	port.on('data', function (data) {
-		console.log('Data: ' + data);
-		res.send('Data: '+data);
-	});
-};
-
-//get me sensor readings from this node
-app.get('/sensors', getSensors,  function (req, res) {
-});
 
 //when a student submits a question to this pod, store it in the database then publish it to other pods
-app.post('/question', jsonParser, function(req, res, next){
+app.post('/question', function(req, res, next){
+	console.log('got a question!');
 	res.send('ok thanks');
 	var qID = req.body.qID;
 	var qAn = req.body.qAn;
@@ -73,7 +45,7 @@ app.post('/question', jsonParser, function(req, res, next){
 	var qRt = req.body.qRt;
 
 	publish(JSON.stringify({qID:qID, Answer:qAn, Timestamp:qTs, Result:qRt}), topic);
-	insert_answer({qID:qID, Answer:qAn, Timestamp:qTs, Result:qRt},0);
+	//insert_question({qID:qID, Answer:qAn, Timestamp:qTs, Result:qRt},0);
 });
 
 //start listening
@@ -135,7 +107,7 @@ function insert_question(doc, tried) {
 				}
 				else { return console.log(error); }
 			}
-			console.log('inserted answer: ' + http_body);
+			console.log('inserted question: ' + http_body);
 		});
 }
 
