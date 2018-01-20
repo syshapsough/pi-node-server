@@ -2,11 +2,11 @@
 The following sections explain the required steps to prepare the PC/Mac and the Raspberry Pi
 
 ## Table of Contents  
-#### 1. [Headers](#headersjhj)    
-#### 1. [Headers](#headers) 
-#### 1. [Headers](#headers) 
+#### 1. [Setting up your personal computer](#pcmac)    
+#### 1. [Setting up your Raspberry Pi](#rpi) 
+#### 1. [VNC](#vnc) 
 
-
+<a name="pcmac"/>
 ## PC/MAC
 ### CouchDB
 Install the latest version of CouchDB version 1 or 2 from http://couchdb.apache.org/#download
@@ -14,7 +14,8 @@ Install the latest version of CouchDB version 1 or 2 from http://couchdb.apache.
 Install the latest NodeJS from https://nodejs.org/en/download/current/
 ### Wireshark
 Install the latest version of Wireshark from https://www.wireshark.org/download.html
- 
+
+<a name="rpi"/>
 ## RPi
 Preparing the Raspberry Pi
 1.	Download Raspbian and copy it to the SD card
@@ -86,6 +87,7 @@ Visit http://nmon.sourceforge.net/pmwiki.php?n=Site.Documentation for options.
 
 Resulting nmon files can be viewed using several tools, we recommend NMONVisualizer https://nmonvisualizer.github.io/nmonvisualizer/
  
+<a name="vnc"/>
 ## VNC
 ### Raspberry Pi
 ### Download realVNC
