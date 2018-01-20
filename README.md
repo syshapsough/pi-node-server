@@ -1,4 +1,9 @@
-{:toc max_level=3 }
+##### Table of Contents  
+[Headers](#headers)  
+[Emphasis](#emphasis)  
+...snip...    
+<a name="headers"/>
+## Headers
 
 
 # Setup
