@@ -1,3 +1,6 @@
+{:toc max_level=3 }
+
+
 # Setup
 The following sections explain the required steps to prepare the PC/Mac and the Raspberry Pi
 ## PC/MAC
