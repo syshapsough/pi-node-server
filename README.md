@@ -110,6 +110,10 @@ Open VNCViewer on your computer, and type the IP address of the Raspberry Pi fol
 
 ## Bad Network Simulation
 Mac OSX includes tools that can contro network traffic by filtering packets, controlling bandwidth, adding delay, etc.
+first, enable pf
+```
+sudo pfctl -E
+```
 Create a custom anchor in pf
 ```
 (cat /etc/pf.conf && echo "dummynet-anchor \"mop\"" && echo "anchor \"mop\"") | sudo pfctl -f -
@@ -120,21 +124,19 @@ Pipe the desired traffic to dummynet
 ```
 echo "dummynet in quick proto tcp from any to any port 1883 pipe 1" | sudo pfctl -a mop -f -
 ```
-This is MY rule (i needed to throttle all bandwidth on port 1883). Modify to your needs and consult pf documentation (yes - that is standard pf stuff apart from the dummynet :) )
+This is MY rule (i needed to throttle all bandwidth on port 1883). Modify to your needs and consult pf documentation.
 
-Throttle the pipe
+Set the bandwidth to 1Mbit/s, and delay all packets by 3 seconds.
 ```
-sudo dnctl pipe 1 config bw 1Mbit/s
+sudo dnctl pipe 1 config bw 1Mbit/s delay 3000
 ```
-Should be self explanatory :)
 
 To reset:
 ```
 sudo dnctl flush
 sudo pfctl -f /etc/pf.conf
 ```
-
+To disable pf
 ```
-sudo pfctl -E
 sudo pfctl -D
 ```
