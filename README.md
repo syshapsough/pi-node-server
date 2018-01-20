@@ -1,4 +1,7 @@
-##### Table of Contents  
+# Setup
+The following sections explain the required steps to prepare the PC/Mac and the Raspberry Pi
+
+## Table of Contents  
 [Headers](#headers)  
 [Emphasis](#emphasis)  
 ...snip...    
@@ -6,8 +9,6 @@
 ## Headers
 
 
-# Setup
-The following sections explain the required steps to prepare the PC/Mac and the Raspberry Pi
 ## PC/MAC
 ### CouchDB
 Install the latest version of CouchDB version 1 or 2 from http://couchdb.apache.org/#download
