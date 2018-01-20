@@ -2,9 +2,7 @@
 The following sections explain the required steps to prepare the PC/Mac and the Raspberry Pi
 
 ## Table of Contents  
-[Headers](#headers)  
-[Emphasis](#emphasis)  
-...snip...    
+## 1. [Headers](#headers).    
 <a name="headers"/>
 ## Headers
 
