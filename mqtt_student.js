@@ -2,7 +2,7 @@
 // console.log('************************************ MQTT ************************************');
 // console.log('******************************************************************************');
 
-var mqttBroker = 'mqtt://ioc.eclipse.org:1883'
+var mqttBroker = 'mqtt://localhost:1883'
 var couchDbHost = 'http://localhost:5984';
 var mainDBHost = 'http://169.254.48.101:5984'
 
@@ -91,6 +91,7 @@ function pull_questions(cb) {
 		if (!err) {
 			body.rows.forEach(function(item){
 				QuestionsPool.push({qID:item.key, qQn:item.value})
+				//console.log(item.key)
 			});
 			cb(true);
 		}
